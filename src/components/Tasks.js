@@ -1,31 +1,17 @@
-//Tasks component
+//List of tasks component
 
-const tasks = [
+import Task from './Task'
 
-    {
-        id: 1,
-        text: 'Wake Up',
-        day: 'Feb 5th at 9:00am',
-        reminder: false
-    },
-    {
-        id: 2,
-        text: 'Eat Borgar',
-        day: 'Feb 5th at 12:00pm',
-        reminder: true
-    },
-    {
-        id: 3,
-        text: 'Punch Badguys',
-        day: 'Feb 5th at 12:30pm',
-        reminder: false
-    },
+//tasks is being passed in from the useState in App.js
+const Tasks = ({ tasks, onDelete }) => {
 
-];
-
-const Tasks = () => {
   return (
-    <div>Tasks</div>
+    <div className="list-group">
+    {/* iterates through array of task objects and renders a task component for each task */}
+    {tasks.map((task) => (
+        <Task key={task.id} task={task} onDelete={onDelete} />
+    ))}
+    </div>
   )
 }
 

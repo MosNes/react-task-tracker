@@ -8,7 +8,7 @@ const Header = (props) => {
     }
 
   return (
-    <header className='header'>
+    <header className='header d-flex justify-content-between p-4 mb-4'>
         <h1>{props.title}</h1>
         <Button color='green' text='Add' onClick={onClick} />
     </header>
