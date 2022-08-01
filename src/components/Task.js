@@ -3,9 +3,9 @@
 //import icon from react-icons package's fontawesome collection
 import { FaTimes } from 'react-icons/fa'
 
-const Task = ({task, onDelete}) => {
+const Task = ({task, onDelete, onToggle}) => {
   return (
-    <div className="list-group-item p-4">
+    <div className={`list-group-item p-4 ${task.reminder ? 'bg-success text-white' : ''}`} onDoubleClick={() => onToggle(task.id)}>
         <h3 className="d-flex justify-content-between">{task.text}
         <FaTimes 
         onClick={() => onDelete(task.id)} 
